@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 100%;
+            height: auto;
+        }
+
+        .box {
+            width: 200px;
+            height: 50px;
+            margin: 100px auto 0;
+
+        }
+
+        .button {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            font-size: 15px;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .car {
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            margin-top: -15px;
+        }
+
+        @keyframes car {
+            0% {
+                left: 100%;
+            }
+
+            20% {
+                left: 30%;
+            }
+
+            50% {
+                left: 70%;
+            }
+
+            75% {
+                left: 20%;
+            }
+
+            100% {
+                left: 120%;
+            }
+        }
+
+        .car .black {
+            width: 45px;
+            height: 30px;
+            background-color: red;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .car .light {
+            position: absolute;
+            width: 3px;
+            height: 16px;
+            background-color: green;
+            border-radius: 3px;
+        }
+
+        .car .top {
+            top: 0;
+            left: -2px;
+        }
+
+        .car .bottom {
+            bottom: 0;
+            left: -2px;
+        }
+
+        .cont {
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            margin-top: -7.5px;
+            width: 15px;
+            height: 15px;
+            background-color: khaki;
+            border-radius: 3px;
+        }
+
+        @keyframes cont {
+            0% {
+                right: 100%;
+            }
+
+            10% {
+                right: 70%;
+            }
+
+            20% {
+                right: 60%;
+            }
+
+            50% {
+                right: 20%;
+            }
+
+            75% {
+                right: 70%;
+            }
+
+            100% {
+                right: -30%;
+            }
+
+        }
+
+        .line {
+            position: absolute;
+            top: 50%;
+            margin-top: -1.5px;
+            left: 100%;
+            width: 250px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 2px;
+        }
+
+        @keyframes line {
+            50% {
+                left: 100%;
+            }
+
+            75% {
+                left: 20%;
+            }
+
+            80% {
+                left: 0%;
+            }
+
+            100% {
+                left: -10%;
+            }
+        }
+
+        .animation .car {
+            -webkit-animation: car 10s ease forwards;
+            animation: car 10s ease forwards;
+        }
+
+        .animation .cont {
+            -webkit-animation: cont 10s ease forwards;
+            animation: cont 10s ease forwards;
+        }
+
+        .animation .line {
+            -webkit-animation: line 10s ease forwards;
+            animation: line 10s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box">
+            <div class="button" onclick="button()">点击下单
+                <div class="car">
+                    <div class="black"></div>
+                    <div class="light top"></div>
+                    <div class="light bottom"></div>
+                </div>
+                <div class="cont"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function button() {
+        if (document.querySelector('.button').className.indexOf('animation') !== '-1') {
+            document.querySelector('.button').classList.add('animation');
+            setTimeout(() => {
+                document.querySelector('.button').classList.remove('animation');
+            }, 10000)
+        }
+    }
+</script>
+
+</html>
