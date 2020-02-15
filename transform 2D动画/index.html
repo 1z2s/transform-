@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: antiquewhite;
+            border: 1px solid brown;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+            margin: 50px 15px 0;
+        }
+
+        /* 倾斜30度 */
+        .box1 {
+            transform: skew(30deg, 0deg);
+        }
+
+        /* 缩放0.5倍 */
+        .box2 {
+            transform: scale(0.5, 1);
+        }
+
+        /* 旋转45度 */
+        .box3 {
+            transform: rotate(45deg);
+        }
+
+        /* x轴位移10px，y轴位移20px */
+        .box4 {
+            transform: translate(10px, 20px);
+        }
+
+        /* 先旋转45度，倾斜30度，缩放1.5倍，位移x轴10px y轴37px */
+        .box5 {
+            transform: rotate(45deg) skewX(30deg) scale(1.5, 1) translate(10px, 37px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box0">box0</div>
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+    <div class="box box5">box5</div>
+</body>
+
+</html>
